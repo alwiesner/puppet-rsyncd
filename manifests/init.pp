@@ -18,7 +18,7 @@ class rsyncd {
   augeas { 'set rsync logfile':
     incl    => '/etc/rsyncd.conf',
     lens    => 'Rsyncd.lns',
-    changes => " '.anon/log\\ file' /var/log/rsyncd.log",
+    changes => "set '.anon/log\\ file' /var/log/rsyncd.log",
     require => File['/etc/rsyncd.conf'],
   }
 
